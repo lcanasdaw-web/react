@@ -1,0 +1,40 @@
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#username, #password {
+    background-color: #f0f0f0;
+    border: 1px solid #3ba6d0;
+    color: green;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#btn1, #btn2 {
+    display: flex;
+    background-color: #3ba6d0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
