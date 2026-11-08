@@ -1,12 +1,126 @@
+/* Responsive image mosaic inspired by the Phantom template tiles. */
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.album-image {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.25rem;
+  background: #777;
+  color: #fff;
+  isolation: isolate;
+}
+
+.album-image .image,
+.album-image .image::before,
+.album-image .image::after,
+.album-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.album-image .image {
+  display: block;
+  overflow: hidden;
 }
 
 .album-image img {
-  width: 100%;
-  height: 180px;
+  display: block;
   object-fit: cover;
-  border-radius: 8px;
+  transition: transform 0.7s ease;
+}
+
+.album-image .image::before {
+  content: "";
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 0.35s ease;
+}
+
+.album-image .image::after {
+  content: "";
+  z-index: 2;
+  opacity: 0.25;
+  background-image: linear-gradient(135deg, transparent 49.6%, #fff 50%, transparent 50.4%),
+    linear-gradient(45deg, transparent 49.6%, #fff 50%, transparent 50.4%);
+  transition: opacity 0.35s ease;
+}
+
+.album-image.style1 .image::before { background: #f2849e; }
+.album-image.style2 .image::before { background: #7ecaf6; }
+.album-image.style3 .image::before { background: #7bd0c1; }
+.album-image.style4 .image::before { background: #c75b9b; }
+.album-image.style5 .image::before { background: #ae85ca; }
+.album-image.style6 .image::before { background: #8499e7; }
+
+.album-caption {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.album-caption h2 {
+  margin: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.album-caption p {
+  margin: 0.5rem 0 0;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.album-image:hover img {
+  transform: scale(1.08);
+}
+
+.album-image:hover .image::before {
+  opacity: 0.35;
+}
+
+.album-image:hover .image::after {
+  opacity: 0;
+}
+
+.album-image:hover .album-caption p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none) {
+  .album-caption p {
+    opacity: 1;
+    transform: none;
+  }
 }

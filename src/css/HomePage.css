@@ -1,0 +1,116 @@
+.home-page {
+  padding-top: 1rem;
+}
+
+.home-intro {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 1rem auto 4rem;
+  padding: 2.5rem 2rem;
+  border-radius: 0.35rem;
+  background: #f2edf7;
+  text-align: center;
+}
+
+.home-intro .home-kicker {
+  margin-bottom: 0.5rem;
+  color: #8a77a8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-intro h1 {
+  margin-bottom: 1rem;
+}
+
+.home-intro > p:last-child {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.home-section {
+  margin: 0 0 2rem;
+  padding: 2rem;
+  border-radius: 0.35rem;
+  background: #edf4f8;
+}
+
+.home-section > h2,
+.home-account h2 {
+  margin: 0 0 0.5rem;
+  color: #585858;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-section .section-description {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-card {
+  min-height: 12rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd7e5;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #393541;
+}
+
+.home-card h3 {
+  margin: 0 0 0.75rem;
+  color: #403a49;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-card p {
+  margin-bottom: 1rem;
+}
+
+.home-card a,
+.home-account a {
+  color: #5c3f7e;
+  font-weight: 700;
+}
+
+.home-account {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: 0.35rem;
+  background: #f2edf7;
+  text-align: center;
+}
+
+.home-account p {
+  max-width: 48rem;
+  margin: 0.75rem auto 1rem;
+}
+
+@media (max-width: 760px) {
+  .home-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro {
+    margin-bottom: 3rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .home-section,
+  .home-account {
+    padding: 1.5rem 1.25rem;
+  }
+}

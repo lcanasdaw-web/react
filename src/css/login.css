@@ -1,40 +1,68 @@
-
 #login-container {
-    display: flex;
-    flex-direction: column;
+  width: min(100%, 34rem);
+  margin: 0 auto;
 }
 
-form {
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#login-form {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.25rem;
+  background: #fafafa;
 }
 
-#username, #email {
-    background-color: #f0f0f0;
-    border: 1px solid #3ba6d0;
-    color: green;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#login-form label {
+  display: block;
 }
 
-#btn1, #btn2 {
-    display: flex;
-    background-color: #3ba6d0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
+#login-form #username,
+#login-form #email {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #c9c9c9;
+  border-radius: 0.2rem;
+  background: #fff;
+  color: #585858;
+  font: inherit;
 }
+
+#login-form #username:focus,
+#login-form #email:focus {
+  outline: 2px solid #8cc9f0;
+  outline-offset: 1px;
+}
+
 #button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+#login-form #btn1,
+#login-form #btn2 {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #585858;
+  border-radius: 0.2rem;
+  background: #585858;
+  color: #fff;
+  font: inherit;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#login-form #btn2 {
+  background: transparent;
+  color: #585858;
+}
+
+@media (max-width: 500px) {
+  #login-form {
+    padding: 1.25rem;
+  }
 }
