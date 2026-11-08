@@ -11,7 +11,7 @@ form {
     align-items: center;
 }
 
-#username, #password {
+#username, #email {
     background-color: #f0f0f0;
     border: 1px solid #3ba6d0;
     color: green;
