@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Menu from "./components/Menu.jsx";
 import AlbumPage from "./pages/AlbumPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
 import PostPage from "./pages/PostPage.jsx";
 import TodoPage from "./pages/TodoPage.jsx";
 import UserPage from "./pages/UserPage.jsx";
@@ -16,13 +17,13 @@ function App() {
   const [loginIncorrecto, setLoginIncorrecto] = useState(false);
   const navigate = useNavigate();
 
-  // Credenciales temporales para practicar el flujo de login.
   function validarLogin(username, email) {
     const correcto = username === "usuario" && email === "usuario@email.com";
 
     if (correcto) {
       setUsuario({ username, name: "Usuario" });
       setLoginIncorrecto(false);
+      navigate("/");
     } else {
       setUsuario(null);
       setLoginIncorrecto(true);
@@ -42,8 +43,12 @@ function App() {
         <Routes>
           <Route
             path="/"
+            element={<HomePage />}
+          />
+          <Route
+            path="/login"
             element={
-              <HomePage
+              <LoginPage
                 onLogin={validarLogin}
                 loginIncorrecto={loginIncorrecto}
               />

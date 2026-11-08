@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./menu.css";
+import "../css/menu.css";
 
 function Menu({ usuario, onLogout }) {
   return (
@@ -10,7 +10,7 @@ function Menu({ usuario, onLogout }) {
         <Link to="/posts">Posts</Link>
         {usuario && (
           <>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">Perfil</Link>
             <Link to="/todos">Todos</Link>
           </>
         )}
@@ -19,10 +19,16 @@ function Menu({ usuario, onLogout }) {
         {usuario ? (
           <>
             <span>Hola, {usuario.name}</span>
-            <button type="button" onClick={onLogout}>Logout</button>
+            <button type="button" onClick={onLogout}>Salir</button>
           </>
         ) : (
-          <span>Guest</span>
+          <>
+            <span>Invitado</span>
+            <Link to="/login" className="session-action">Login</Link>
+            <button type="button" className="session-action" disabled>
+              Register
+            </button>
+          </>
         )}
       </div>
     </header>

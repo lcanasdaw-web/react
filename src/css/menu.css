@@ -31,3 +31,8 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+#menu button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
