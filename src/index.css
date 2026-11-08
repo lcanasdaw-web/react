@@ -54,6 +54,24 @@ body {
   margin: 0;
 }
 
+main {
+  flex: 1;
+}
+
+.page {
+  padding: 2rem 1.5rem;
+}
+
+.page h1 {
+  padding-top: 1rem;
+  color: #1686ad;
+}
+
+.form-error {
+  margin: 1rem auto;
+  color: #b42318;
+}
+
 #root {
   width: 1126px;
   max-width: 100%;
